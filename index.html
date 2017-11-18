@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>POC</title>
+
+  <!-- Bootstrap -->
+  <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Web app stylesheet -->
+  <link href="./resources/css/main.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9 seller-data">
+        <p>demosport2 -
+          <a href="https://demosport2.myshopify.com">https://demosport2.myshopify.com</a>
+        </p>
+        <p>zuriel@compropago.com</p>
+        <p>Tel.
+          <span>5566553399</span>
+        </p>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+
+    <div class="row">
+      <form method="post" action="#" class="form-horizontal">
+        <div class="row order-data">
+          <div class="col-md-6">
+            <p class="sub-title">Completar orden de pago</p>
+            <div class="form-group">
+              <label for="customer_name" class="col-sm-3 control-label">Nombre</label>
+              <div class="col-sm-9">
+                <input type="text" id="customer_name" name="customer_name" maxlength="70" placeholder="Nombre completo" required="true">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="customer_email" class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+                <input type="email" id="customer_email" name="customer_email" maxlength="50" placeholder="Correo electrónico" required="true">
+              </div>
+            </div>
+            <div class="control-group">
+              <p class="sub-title bottom-border">Producto/Servicio</p>
+              <div class="col-md-9">Producto a</div>
+              <div class="col-md-3">$120.00</div>
+            </div>
+            <br>
+            <div class="control-group">
+              <div class="col-md-4">Pagaré en:</div>
+              <div class="col-md-8 store-selected">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/label-SEVEN_ELEVEN.png">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="location">
+              <p class="sub-title">Tu ubicación</p>
+              <a href="#">(Refrescar)</a>
+            </div>
+            <div id="map-canvas"></div>
+          </div>
+          <div class="col-md-12 centered order-payment-button">
+            <button id="continue_button" type="submit">Crear orden de pago</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 centered">
+            <p class="store-selector">Seleccionar tienda</p>
+          </div>
+        </div>
+        <div class="row stores">
+          <div class="column">
+            <div class="store">
+              <label class="provider-description" for="r-SEVEN_ELEVEN">
+                <input id="r-SEVEN_ELEVEN" name="payment_type" value="SEVEN_ELEVEN" image-label="SEVEN_ELEVEN" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-seven-medium.png" alt="7Eleven">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-OXXO">
+                <input id="r-OXXO" name="payment_type" value="OXXO" image-label="OXXO" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-oxxo-medium.png" alt="Oxxo">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-EXTRA">
+                <input id="r-EXTRA" name="payment_type" value="EXTRA" image-label="EXTRA" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-extra-medium.png" alt="Extra">
+              </label>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="store">
+              <label class="provider-description" for="r-COPPEL">
+                <input id="r-COPPEL" name="payment_type" value="COPPEL" image-label="COPPEL" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-coppel-medium.png" alt="Coppel">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-BANAMEX">
+                <input id="r-BANAMEX" name="payment_type" value="BANAMEX" image-label="BANAMEX" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-banamex-medium.png" alt="7Eleven">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-ELEKTRA">
+                <input id="r-ELEKTRA" name="payment_type" value="ELEKTRA" image-label="ELEKTRA" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-elektra-medium.png" alt="Elektra">
+              </label>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="store">
+              <label class="provider-description" for="r-SCOTIABANK">
+                <input id="r-SCOTIABANK" name="payment_type" value="SCOTIABANK" image-label="SCOTIABANK" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-scotiabank-medium.png" alt="Scotiabank">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-BANORTE">
+                <input id="r-BANORTE" name="payment_type" value="BANORTE" image-label="BANORTE" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-banorte-medium.png" alt="Banorte">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-INBURSA">
+                <input id="r-INBURSA" name="payment_type" value="INBURSA" image-label="INBURSA" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-inbursa-medium.png" alt="Inbursa">
+              </label>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="store">
+              <label class="provider-description" for="r-CASA_LEY">
+                <input id="r-CASA_LEY" name="payment_type" value="Casa ley" image-label="CASA_LEY" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-ley-medium.png" alt="Casa Ley">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="r-FARMACIA_ESQUIVAR">
+                <input id="r-FARMACIA_ESQUIVAR" name="payment_type" value="FARMACIA_ESQUIVAR" image-label="FARMACIA_ESQUIVAR" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-esquivar-medium.png" alt="Farmacia Esquivar">
+              </label>
+            </div>
+            <div class="store">
+              <label class="provider-description" for="PITICO">
+                <input id="r-PITICO" name="payment_type" value="PITICO" image-label="PITICO" type="radio">
+                <img src="https://s3.amazonaws.com/compropago/assets/images/receipt/receipt-pitico-medium.png" alt="Pitico">
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="./resources/js/jquery-1.12.4.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="./resources/js/bootstrap.min.js"></script>
+  <script src="./resources/js/main.js"></script>
+</body>
+
+</html>
